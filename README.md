@@ -43,15 +43,28 @@ chmod +x /path/to/cagent-binary
 
 ### 2. Set Your API Keys
 
-```bash
-# For Anthropic
-export ANTHROPIC_API_KEY=your_api_key_here
+Copy the environment template and add your keys:
 
-# For Spotify
-export SPOTIFY_CLIENT_ID=your_spotify_client_id
-export SPOTIFY_CLIENT_SECRET=your_spotify_client_secret
-export SPOTIFY_REDIRECT_URI=http://127.0.0.1:8080/callback
+```bash
+cp .env.example .env
 ```
+
+Then edit `.env` with your actual API keys:
+
+```bash
+# Anthropic API Configuration
+ANTHROPIC_API_KEY=your_anthropic_api_key_here
+
+# OpenAI API Configuration (optional, for research features)
+OPENAI_API_KEY=your_openai_api_key_here
+
+# Spotify API Configuration
+SPOTIFY_CLIENT_ID=your_spotify_client_id_here
+SPOTIFY_CLIENT_SECRET=your_spotify_client_secret_here
+SPOTIFY_REDIRECT_URI=http://127.0.0.1:8080/callback
+```
+
+**Important:** Never commit your `.env` file to version control. It contains sensitive API keys.
 
 ### 3. Run Your Playlist Curator
 
